@@ -6,10 +6,14 @@ import { AppComponent } from './app.component';
 import { InjectableRxStompConfig, RxStompService, rxStompServiceFactory } from '@stomp/ng2-stompjs';
 
 import { myRxStompConfig } from './my-rx-stomp.config';
+import { BuildingOneComponent } from './building-one/Building-one.component';
+import { BuildingTwoComponent } from './building-two/building-two.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BuildingOneComponent,
+    BuildingTwoComponent
   ],
   imports: [
     BrowserModule

@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+.messages {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+.child {
+    display: flex;
+    justify-content: center;
+    flex: 0 0 50px;
+}
