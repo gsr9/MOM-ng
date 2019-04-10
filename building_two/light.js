@@ -9,9 +9,9 @@ stompit.connect({ 'client-id': 'Building_one', host: 'localhost', port: 61613 },
     msg.readString('UTF-8', (err, body) => {
       console.log(body);
       if(body == 'UP'){
-        i += 100
+        i += 50
       } else if (body == 'DOWN'){
-        i -= 100;
+        i -= 50;
       }
     });
  
