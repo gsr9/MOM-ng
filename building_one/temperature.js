@@ -3,9 +3,9 @@ const stompit = require('stompit');
 var i = 21.0;
 
 stompit.connect({ 'client-id': 'Building_one', host: 'localhost', port: 61613 }, (err, client) => {
- 
+
   client.subscribe({ 'activemq.subscriptionName': 'Building One Temp. Actuator', destination: '/topic/B1_Temp_Actuator' }, (err, msg) => {
- 
+
     msg.readString('UTF-8', (err, body) => {
       console.log(body);
       if(body == 'UP'){
@@ -14,13 +14,13 @@ stompit.connect({ 'client-id': 'Building_one', host: 'localhost', port: 61613 },
         i -= 0.5;
       }
     });
- 
+
   });
- 
+
 });
 
 setInterval(() => {
- 
+
   stompit.connect({ host: 'localhost', port: 61613 }, (err, client) => {
 
 

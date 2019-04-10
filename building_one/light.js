@@ -3,24 +3,24 @@ const stompit = require('stompit');
 var i = 500;
 
 stompit.connect({ 'client-id': 'Building_one', host: 'localhost', port: 61613 }, (err, client) => {
- 
+
   client.subscribe({ 'activemq.subscriptionName': 'Building One Light Actuator', destination: '/topic/B1_Light_Actuator' }, (err, msg) => {
- 
+
     msg.readString('UTF-8', (err, body) => {
       console.log(body);
       if(body == 'UP'){
-        i += 100
+        i += 50
       } else if (body == 'DOWN'){
-        i -= 100;
+        i -= 50;
       }
     });
- 
+
   });
- 
+
 });
 
 setInterval(() => {
- 
+
   stompit.connect({ host: 'localhost', port: 61613 }, (err, client) => {
 
 
